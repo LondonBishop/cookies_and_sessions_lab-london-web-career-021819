@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <br>
+
+        <form action="<%= products_add_path %>" method="post">
+          Add to cart :<br>
+          <input type="text" name="name">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <br><br>
+          <input type="submit" value="Submit">
+        </form>
+
+        <div>
+              <% @cartitems.each do |product| %>
+              <ul>
+                <li><%= product["name"] %></li>
+              </ul>
+              <%  end %>
+
+        </div>
+    </body>
+</html>
